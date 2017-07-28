@@ -1,0 +1,13 @@
+.page-block{
+	display: block;
+	width: 20px;
+	line-height: 15px;
+	border: 1px solid #000000;
+	float: left;
+	margin: 0px 3px;
+	cursor: pointer;
+}
+
+.page-block:hover{
+	background-color: lightgrey;
+}
