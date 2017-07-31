@@ -1,13 +1,60 @@
-.page-block{
-	display: block;
-	width: 20px;
-	line-height: 15px;
-	border: 1px solid #000000;
-	float: left;
-	margin: 0px 3px;
-	cursor: pointer;
+.pagination-box{
+	width: 100%;
+	overflow: hidden;
+    margin-left: 60px;
 }
 
-.page-block:hover{
-	background-color: lightgrey;
+.page-block
+{
+    font-size: 13px;
+    line-height: 28px;
+
+    display: block;
+    float: left;
+
+    width: 20px;
+    min-width: 28px;
+    margin: 0 3px;
+
+    cursor: pointer;
+    text-align: center;
+
+    color: #888;
+    border: 1px solid rgb(229, 213, 209);
+}
+
+.page-block:hover
+{
+    color: #fff;
+    background: #ffb5b5;
+}
+
+.prev-roll
+{
+    font-size: 13px;
+    font-weight: lighter;
+    line-height: 28px;
+
+    display: block;
+    float: left;
+
+    width: 20px;
+    width: 20px;
+    min-width: 28px;
+    margin: 0 3px;
+
+    cursor: pointer;
+
+    color: #ccc;
+    border: 1px solid rgb(229, 213, 209);
+}
+
+.active
+{
+    color: #fff;
+    background: #e3483c;
+}
+
+.arrow{
+	font-size: 18px;
 }
