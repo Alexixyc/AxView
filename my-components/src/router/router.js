@@ -12,6 +12,10 @@ export default new Router({
 				path: 'pagination',
 				name: 'pagination',
 				component: require('../components/pagination/pagination')
+			}, {
+				path: 'demo',
+				name: 'demo',
+				component: require('../components/demo/demo')
 			}]
 			// ,
 			// children: [{

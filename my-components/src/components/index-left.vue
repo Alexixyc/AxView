@@ -1,6 +1,7 @@
 <template>
 	<div class="left">
       <router-link :to= "{path:'pagination'}">分页组件</router-link>
+      <router-link :to= "{path:'demo'}">demo</router-link>
     </div>
 </template>
 
