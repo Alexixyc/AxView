@@ -1,10 +1,11 @@
 <template>
 	<div class="pagination-box">
+		
 		<span class="page-block arrow" @click= "prevPage(selected)"> < </span>
 		<span class="page-block" :class="{active:selected === 1}" @click="jumpTo(1)"> 1 </span>
-		<span class="prev-roll" v-if= "prevMore"> ••• </span>
+		<span class="page-block arrow" v-if= "prevMore" @click="jumpPrev"> << </span>
 		<span v-for = "(item,index) in indexArr" class="page-block" :class="{active:selected === item}" @click= "jumpTo(item)">{{item}}</span>
-		<span class="prev-roll" v-if= "nextMore"> ••• </span>
+		<span class="page-block arrow" v-if= "nextMore" @click="jumpNext"> >> </span> <!-- ••• -->
 		<span class="page-block" :class="{active:selected === pageAmount}" @click="jumpTo(pageAmount)" v-if="!isOnlyOne"> {{pageAmount}} </span>
 		<span class="page-block arrow" @click= "nextPage(selected)"> > </span>
 	</div>
@@ -69,6 +70,18 @@
 				if (selected < _this.pageAmount) {
 					_this.jumpTo(selected + 1);
 				}
+			},
+			jumpNext:function(){
+				var _this = this;
+				if (_this.selected + 3 <= _this.pageAmount) {
+					_this.jumpTo(_this.selected + 3);
+				}else _this.jumpTo(_this.pageAmount);
+			},
+			jumpPrev(){
+				var _this = this;
+				if (_this.selected - 3 >= 1) {
+					_this.jumpTo(_this.selected - 3);
+				}else _this.jumpTo(1);
 			}
 		},
 

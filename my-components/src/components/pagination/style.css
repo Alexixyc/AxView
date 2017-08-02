@@ -32,10 +32,10 @@
     background: #ffb5b5;
 }
 
-.prev-roll
+.roll
 {
     font-size: 13px;
-    font-weight: lighter;
+    font-weight: bold;
     line-height: 28px;
 
     display: block;
@@ -63,3 +63,4 @@
 {
     font-size: 18px;
 }
+

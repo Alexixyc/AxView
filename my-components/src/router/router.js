@@ -17,11 +17,5 @@ export default new Router({
 				name: 'demo',
 				component: require('../components/demo/demo')
 			}]
-			// ,
-			// children: [{
-			// 	path: 'pagination ',
-			// 	name: 'pagination',
-			// 	component: pagination
-			// }]
 	}]
 })
