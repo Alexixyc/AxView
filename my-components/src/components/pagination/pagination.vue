@@ -75,13 +75,13 @@
 				var _this = this;
 				if (_this.selected + 3 <= _this.pageAmount) {
 					_this.jumpTo(_this.selected + 3);
-				}else _this.jumpTo(_this.pageAmount);
+				}else _this.jumpTo(_this.pageAmount);		//往后翻3页
 			},
 			jumpPrev(){
 				var _this = this;
 				if (_this.selected - 3 >= 1) {
 					_this.jumpTo(_this.selected - 3);
-				}else _this.jumpTo(1);
+				}else _this.jumpTo(1);					//往前翻3页
 			}
 		},
 
