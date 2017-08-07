@@ -1,6 +1,12 @@
 <template>
 	<div class="pagination-box">
-		
+		<div class="select-box">
+			<span>每页显示</span>
+			<select @change="changePageSize">
+				<option v-for="(item,index) in PageSizes" v-model="PageSizes[index]">{{item}}</option>
+			</select>
+			<span>条数据</span>
+		</div>
 		<span class="page-block arrow" @click= "prevPage(selected)"> < </span>
 		<span class="page-block" :class="{active:selected === 1}" @click="jumpTo(1)"> 1 </span>
 		<span class="page-block arrow" v-if= "prevMore" @click="jumpPrev"> << </span>
@@ -11,13 +17,14 @@
 	</div>
 </template>
 
-<style scoped src = "./style.css"></style>
+<style scoped src = "./style.css" lang="less"></style>
 
 <script>
 	module.exports = {
 		data: function() {
 			return {
 				indexArr: [], //
+				PageSizes: [5,10,20,30],//下拉选择每页多少项
 				totalNum: '100', //数据项的总数
 				numPerPage: 5, //每页数据项数目
 				//swichNum: 7, //一共显示多少个页码按钮 暂时写死成7个按钮1,2，3,4,5,6•••last
@@ -30,6 +37,30 @@
 		},
 
 		methods: {
+
+			init: function() {
+				var _this = this;
+				var y = _this.totalNum % _this.numPerPage; //总条目数 除以 每页条目数的余数
+				var s = Math.floor(_this.totalNum / _this.numPerPage); //总条目数 除以 每页条目数的商
+				_this.pageAmount = (y === 0) ? s : (s + 1); //总的页码数
+
+				if (_this.pageAmount > 7) { //若总页数大于7页
+					for (var i = 2; i < 7; i++) {
+						_this.indexArr.push(i); //初始状态push：2到6进去
+					}
+					_this.nextMore = true;
+				} else if (_this.pageAmount <= 7 && _this.pageAmount > 1) {
+					for (var i = 2; i < _this.pageAmount; i++) {
+						_this.indexArr.push(i); //初始状态push：2到pageAmount进去
+					}
+				} else {
+					_this.isOnlyOne = true; //只有一页
+				}
+
+				console.log('每页' + _this.numPerPage + '条数据');
+				console.log('这是第' + _this.selected + '页');
+			},
+
 			jumpTo: function(pageIndex) {
 				var _this = this;
 				_this.selected = pageIndex;
@@ -71,42 +102,29 @@
 					_this.jumpTo(selected + 1);
 				}
 			},
-			jumpNext:function(){
+			jumpNext: function() {
 				var _this = this;
 				if (_this.selected + 3 <= _this.pageAmount) {
 					_this.jumpTo(_this.selected + 3);
-				}else _this.jumpTo(_this.pageAmount);		//往后翻3页
+				} else _this.jumpTo(_this.pageAmount); //往后翻3页
 			},
-			jumpPrev(){
+			jumpPrev() {
 				var _this = this;
 				if (_this.selected - 3 >= 1) {
 					_this.jumpTo(_this.selected - 3);
-				}else _this.jumpTo(1);					//往前翻3页
+				} else _this.jumpTo(1); //往前翻3页
+			},
+			changePageSize: function(e) {
+				var _this = this;
+				_this.numPerPage = e.target.value;
+				_this.indexArr=[];
+				_this.init();
+				console.log("每页的条数变成了：" + _this.numPerPage);
 			}
 		},
 
 		mounted: function() {
-			var _this = this;
-			var y = _this.totalNum % _this.numPerPage; //总条目数 除以 每页条目数的余数
-			var s = Math.floor(_this.totalNum / _this.numPerPage); //总条目数 除以 每页条目数的商
-			_this.pageAmount = (y === 0) ? s : (s + 1); //总的页码数
-
-			if (_this.pageAmount > 7) { //若总页数大于7页
-				for (var i = 2; i < 7; i++) {
-					_this.indexArr.push(i); //初始状态push：2到6进去
-				}
-				_this.nextMore = true;
-			} else if (_this.pageAmount <= 7 && _this.pageAmount > 1) {
-				for (var i = 2; i < _this.pageAmount; i++) {
-					_this.indexArr.push(i); //初始状态push：2到pageAmount进去
-				}
-			} else {
-				_this.isOnlyOne = true; //只有一页
-			}
-
-			console.log('每页' + _this.numPerPage + '条数据');
-			console.log('这是第' + _this.selected + '页');
+			this.init();
 		}
 	}
-
 </script>

@@ -1,3 +1,4 @@
+
 .pagination-box
 {
     overflow: hidden;
@@ -64,3 +65,9 @@
     font-size: 18px;
 }
 
+.select-box{
+    float: left;
+    line-height: 30px;
+    font-size: 14px;
+    margin:0px 20px; 
+}
