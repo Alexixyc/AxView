@@ -6,8 +6,6 @@
 	</div>
 </template>
 
-<style lang="sass" scoped src="./style.scss"></style>
-
 <script>
 	
 
