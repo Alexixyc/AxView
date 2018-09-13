@@ -1,73 +1,58 @@
-
-.pagination-box
-{
-    overflow: hidden;
-
-    width: 100%;
+.pagination-box {
     margin-left: 60px;
+    overflow: hidden;
+    width: 100%;
+    font-size: 0;
 }
 
-.page-block
-{
-    font-size: 13px;
-    line-height: 28px;
-
-    display: block;
-    float: left;
-
-    width: 20px;
-    min-width: 28px;
-    margin: 0 3px;
-
-    cursor: pointer;
-    user-select: none;
+.page-block {
+    display: inline-block;
+    margin: 0 5px;
+    min-width: 30px;
     text-align: center;
-
-    color: #888;
-    border: 1px solid rgb(229, 213, 209);
-}
-
-.page-block:hover
-{
-    color: #fff;
-    background: #ffb5b5;
-}
-
-.roll
-{
+    color: #606266;
     font-size: 13px;
-    font-weight: bold;
     line-height: 28px;
-
-    display: block;
-    float: left;
-
-    width: 20px;
-    width: 20px;
-    min-width: 28px;
-    margin: 0 3px;
-
+    font-weight: 700;
+    background: #f4f4f5;
+    border-radius: 2px;
+    border: 1px solid rgba(229, 213, 209, 0.2);
     cursor: pointer;
-    user-select: none;
-
-    color: #ccc;
-    border: 1px solid rgb(229, 213, 209);
 }
 
-.active
-{
-    color: #fff;
-    background: #e3483c;
+.num:hover {
+    color: #242A30;
 }
 
-.arrow
-{
-    font-size: 18px;
+.active {
+    color: #FFFFFF;
+    background: #242A30;
+    cursor: default;
+}
+.active:hover {
+    color: #FFFFFF;
 }
 
-.select-box{
+.arrow {
+    font-size: 14px;
+}
+
+.select-box {
     float: left;
     line-height: 30px;
     font-size: 14px;
-    margin:0px 20px; 
+    margin: 0px 20px;
 }
+
+.page-text {
+    color: #606266;
+    line-height: 30px;
+    font-size: 13px;
+    margin: 0px 20px;
+}
+
+.disabled {
+    cursor: not-allowed;
+    color: #CACDD4;
+}
+
