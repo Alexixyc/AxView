@@ -1,18 +1,5 @@
-<template>
+<template>
     <div class="pagination-box">
-        <!-- <div class="select-box">
-            <span>每页显示</span>
-            <select
-                @change="changePageSize"
-                v-model="pageSize">
-                <option
-                    v-for="(item,index) in pageSizeOptions"
-                    :key="index">
-                    {{item}}
-                </option>
-            </select>
-            <span>条数据</span>
-        </div> -->
         <span class="page-text">共 {{total}} 条</span>
         <!-- 上一页按钮< -->
         <span
@@ -72,29 +59,20 @@
 
 <script>
 export default {
-    // [总条目数, 当前页码]
+    // [总条目数, 当前页码, 每页数据条目数]
     props: ['total', 'currentPage', 'pageSize'],
     data() {
         return {
-            indexArr: [],
-            pageSizeOptions: [5, 10, 20, 30], // 下拉选择每页多少项
-            // pageSize: 5,
-            // currentPage: 1, // 当前页码
-            // total: '100', // 数据项的总数
+            indexArr: [], // 存放页码的数组
             pageAmount: 0, // 分页后，总的页码数
-            prevMore: false,
-            nextMore: false,
-            isOnlyOne: false
+            prevMore: false, // 是否显示 <<
+            nextMore: false, // 是否显示 >>
+            isOnlyOne: false // 是否只有一页
         }
     },
     watch: {
         total(val) {
             this.init()
-            console.log(val)
-        },
-        currentPage(val) {
-        },
-        pageSize(val) {
         }
     },
     methods: {
@@ -118,10 +96,6 @@ export default {
                 this.isOnlyOne = true // 只有一页
             }
             this.jumpTo(this.currentPage)
-            // console.log(this.indexArr)
-            // console.log('每页' + this.pageSize + '条数据')
-            // console.log('这是第' + this.currentPage + '页')
-            // console.log('总页码数' + this.pageAmount + '页')
         },
         jumpTo(val) {
             this.$emit('changePage', val)
@@ -147,35 +121,30 @@ export default {
                     this.indexArr.push(this.pageAmount - 1)
                 }
             }
-            // console.log('每页' + this.pageSize + '条数据')
-            // console.log('这是第' + this.currentPage + '页')
         },
-        prevPage(val) { // 上一页事件
+        // 上一页事件
+        prevPage(val) {
             if (val > 1) {
                 this.jumpTo(val - 1)
             }
         },
-        nextPage(val) { // 下一页事件
+        // 下一页事件
+        nextPage(val) {
             if (val < this.pageAmount) {
                 this.jumpTo(val + 1)
             }
         },
+        // 点击 >>
         jumpNext() {
             if (this.currentPage + 3 <= this.pageAmount) {
                 this.jumpTo(this.currentPage + 3)
             } else this.jumpTo(this.pageAmount) // 往后翻3页
         },
+        // 点击 <<
         jumpPrev() {
             if (this.currentPage - 3 >= 1) {
                 this.jumpTo(this.currentPage - 3)
             } else this.jumpTo(1) // 往前翻3页
-        },
-        // 修改每页数量
-        changePageSize(e) {
-            this.pageSize = e.target.value
-            this.indexArr = []
-            this.init()
-            // console.log('每页的条数变成了：' + this.pageSize)
         }
     },
     mounted() {

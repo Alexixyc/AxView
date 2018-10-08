@@ -1,28 +1,30 @@
 <template>
   <div class="alexi-main">
-    <index-header></index-header>
-    <index-left></index-left>
-    <index-right></index-right>
+    <div>{{msg}}</div>
+    <indexHeader></indexHeader>
+    <indexLeft></indexLeft>
+    <indexRight></indexRight>
   </div>
 </template>
 
 <script>
+import indexHeader from '@/components/indexHeader'
+import indexLeft from '@/components/indexLeft'
+import indexRight from '@/components/indexRight'
 export default {
-  name: 'helloIndex',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to My Vue.js App'
     }
   },
   components:{
-    'index-header':require('./index-header'),
-    'index-left':require('./index-left'),
-    'index-right':require('./index-right'),
+    indexHeader: indexHeader,
+    indexLeft: indexLeft,
+    indexRight: indexRight,
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {
   font-weight: normal;

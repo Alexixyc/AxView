@@ -9,7 +9,7 @@
     </div>
 </template>
 <script>
-import pagination from '../../components/pagination/pagination.vue'
+import pagination from '@/components/pagination/index'
 export default {
     components: {
         'ax-pagination': pagination
