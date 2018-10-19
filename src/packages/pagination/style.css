@@ -1,0 +1,57 @@
+.pagination-box {
+    overflow: hidden;
+    width: 100%;
+    font-size: 0;
+}
+
+.page-block {
+    display: inline-block;
+    margin: 0 5px;
+    min-width: 30px;
+    text-align: center;
+    color: #606266;
+    font-size: 13px;
+    line-height: 28px;
+    font-weight: 700;
+    background: #f4f4f5;
+    border-radius: 2px;
+    border: 1px solid rgba(229, 213, 209, 0.2);
+    cursor: pointer;
+}
+
+.num:hover {
+    color: #242A30;
+}
+
+.active {
+    color: #FFFFFF;
+    background: #242A30;
+    cursor: default;
+}
+.active:hover {
+    color: #FFFFFF;
+}
+
+.arrow {
+    font-size: 14px;
+}
+
+.select-box {
+    float: left;
+    line-height: 30px;
+    font-size: 14px;
+    margin: 0px 20px;
+}
+
+.page-text {
+    color: #606266;
+    line-height: 30px;
+    font-size: 13px;
+    margin: 0px 20px;
+}
+
+.disabled {
+    cursor: not-allowed;
+    color: #CACDD4;
+}
+
