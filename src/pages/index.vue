@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="main">
     index
     <main-header></main-header>
     <main-left></main-left>

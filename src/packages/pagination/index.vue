@@ -1,5 +1,5 @@
 <template>
-    <div class="pagination-box">
+    <div class="ax-pg">
         <span class="page-text">共 {{total}} 条</span>
         <!-- 上一页按钮< -->
         <span
@@ -55,7 +55,7 @@
     </div>
 </template>
 
-<style scoped src = "./style.css" lang="less"></style>
+<style scoped src = "./style.less" lang="less"></style>
 
 <script>
 export default {

@@ -1,0 +1,66 @@
+@import '../../assets/css/color.less';
+@import '../../assets/css/placeholder.less';
+.ax-selection {
+    width: 220px;
+    height: 38px;
+    cursor: pointer;
+}
+
+.sl-main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .sl-input-box {
+        width: 100%;
+        height: 100%;
+        .input-el {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            padding: 0 10px;
+            border: 1px solid rgba(36, 42, 48, 0.3);
+            border-radius: 4px;
+            font-size: 14px;
+            color: @base-0;
+            .placeHolderColor(@base-3);
+            cursor: pointer;
+        }
+    }
+    .disabled {
+        .input-el {
+            color: @base-3;
+            border: 1px solid rgba(36, 42, 48, 0.2);
+            cursor: not-allowed;
+        }
+    }
+    .sl-options {
+        position: absolute;
+        top: 42px;
+        left: 0;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        max-height: 200px;
+        overflow-y: scroll;
+        background: #ffffff;
+        border: 1px solid #eeeeee;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 0 6px rgba(36, 42, 48, 0.2);
+        box-shadow: 0 0 6px rgba(36, 42, 48, 0.2);
+        ul {
+            margin: 6px 0;
+        }
+    }
+}
+
+.slide-enter-active,
+.slide-leave-active {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.slide-enter,
+.slide-leave-to {
+    opacity: 0;
+}
