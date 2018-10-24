@@ -1,10 +1,12 @@
 import AxPagination from './pagination/index.js';
-import AxTest from './testCom/index.js';
+import AxSelect from './select/index.js';
+import AxOption from './option/index.js';
 // ...如果还有的话继续添加
 
 const components = [
     AxPagination,
-    AxTest
+    AxSelect,
+    AxOption
   // ...如果还有的话继续添加
 ]
 
@@ -22,6 +24,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   install,
   AxPagination,
-  AxTest
+  AxSelect,
+  AxOption
   // ...如果还有的话继续添加
 }

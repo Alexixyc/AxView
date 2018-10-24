@@ -1,7 +1,7 @@
 <template>
     <div>
-        <ax-selection
-            class="ax-selection"
+        <ax-select
+            class="ax-select"
             v-model="selectedVal"
             @change="change"
             :disabled="false"
@@ -13,15 +13,15 @@
                 :value="item.value"
                 :disabled="item.disabled">
             </ax-option>
-        </ax-selection>
+        </ax-select>
     </div>
 </template>
 <script>
-import selection from '@/packages/selection/index.vue'
+import select from '@/packages/select/index.vue'
 import option from '@/packages/option/index.vue'
 export default {
     components: {
-        'ax-selection': selection,
+        'ax-select': select,
         'ax-option': option
     },
     data() {
@@ -55,7 +55,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.ax-selection {
+.ax-select {
     margin-left: 30%;
 }
 </style>

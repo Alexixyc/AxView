@@ -1,7 +1,7 @@
 <template>
 	<div class="left">
       <router-link :to= "{path:'pagination'}" class="menu-btn">分页组件</router-link>
-      <router-link :to= "{path:'selection'}" class="menu-btn">选择</router-link>
+      <router-link :to= "{path:'select'}" class="menu-btn">选择</router-link>
     </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="ax-selection" :style="{'width': width + 'px'}">
+    <div class="ax-select" :style="{'width': width + 'px'}">
         <div class="sl-main" @click.stop>
             <div
                 class="sl-input-box"
@@ -24,7 +24,7 @@
 </template>
 <script>
 export default {
-    name: 'ax-selection',
+    name: 'ax-select',
     props: {
         value: { // v-model默认传入的value
             require: true

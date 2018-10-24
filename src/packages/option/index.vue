@@ -47,7 +47,7 @@ export default {
         // li标签点击事件
         select() {
             if (!this.disabled) {
-                // 将当前li组件的props传入 父级selection实例的change方法
+                // 将当前li组件的props传入 父级select实例的change方法
                 this.$parent.change(this.$props)
             }
         }
