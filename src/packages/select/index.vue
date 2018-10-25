@@ -3,14 +3,13 @@
         <div class="sl-main" @click.stop>
             <div
                 class="sl-input-box"
-                @click="handlerClick"
-                :class="{'disabled': disabled}">
-                <input
-                    class="input-el"
-                    type="text"
-                    readonly="readonly"
-                    :placeholder="placeholder"
-                    :value="label">
+                @click="handlerClick">
+                <ax-input
+                    v-model="label"
+                    readonly
+                    :disabled="disabled"
+                    :placeholder="placeholder">
+                </ax-input>
             </div>
             <transition name="slide">
                 <div class="sl-options" v-show="optionsVisible && !disabled">
@@ -23,6 +22,7 @@
     </div>
 </template>
 <script>
+import input from '@/packages/input/index.vue'
 export default {
     name: 'ax-select',
     props: {
@@ -39,6 +39,9 @@ export default {
         },
         disabled: [Boolean] // 是否禁用
     },
+    components: {
+        'ax-input': input
+    },
     data() {
         return {
             optionsVisible: false, // 控制Options显示
@@ -51,13 +54,6 @@ export default {
             if (!this.disabled) {
                 this.optionsVisible = !this.optionsVisible
             }
-        },
-        // 选择Option时，调用的函数
-        change(obj) {
-            this.optionsVisible = false // 隐藏Options
-            this.label = obj.label // 修改输入框上显示的值           
-            this.$emit('input', obj.value) // 修改外部v-model绑定的值(真正的value)
-            this.$emit('change', obj) // 执行外部change方法
         }
     },
     mounted() {

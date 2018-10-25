@@ -1,10 +1,9 @@
 <template>
-  <div class="main">
-    index
-    <main-header></main-header>
-    <main-left></main-left>
-    <main-content></main-content>
-  </div>
+    <div class="main">
+        <main-header></main-header>
+        <main-left></main-left>
+        <main-content></main-content>
+    </div>
 </template>
 
 <script>

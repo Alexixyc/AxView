@@ -5,7 +5,7 @@
             v-model="selectedVal"
             @change="change"
             :disabled="false"
-            :placeholder="'自定义placeholder~'">
+            placeholder="自定义placeholder~">
             <ax-option
                 v-for="item in options"
                 :key="item.value"
@@ -27,29 +27,28 @@ export default {
     data() {
         return {
             options: [{
-                value: 'one',
+                value: '1',
                 label: '选项1'
             }, {
-                value: 'two',
+                value: '2',
                 label: '选项2',
                 disabled: true
             }, {
-                value: 'three',
+                value: '3',
                 label: '选项3'
             }, {
-                value: 'four',
-                label: '选项4很长很长很长很长很长很长特别长长到换行'
+                value: '4',
+                label: '选项4很长很长很长'
             }, {
                 value: 'five',
                 label: '选项5'
             }],
-            selectedVal: ''
+            selectedVal: '3'
         }
     },
     methods: {
         change(obj) {
-            console.log('change方法接受到的被选择option对象：', obj.value)
-            console.log('当前实例selectedVal值的变化', this.selectedVal)
+            console.log('change：', obj)
         }
     }
 }

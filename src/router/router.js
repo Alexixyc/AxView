@@ -6,6 +6,7 @@ Vue.use(Router)
 import index from '@/pages/index'
 import pagination from '@/pages/pagination/index.vue'
 import select from '@/pages/select/index.vue'
+import input from '@/pages/input/index.vue'
 
 export default new Router ({
     routes: [{
@@ -20,6 +21,10 @@ export default new Router ({
 				path: 'select',
 				name: 'select',
 				component: select
+			}, {
+				path: 'input',
+				name: 'input',
+				component: input
 			}]
     }]
 })

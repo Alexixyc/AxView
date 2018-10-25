@@ -1,7 +1,26 @@
-## Welcome to Ax UI
+## Welcome to Ax-View
 [![Github](https://img.shields.io/badge/GitHub-Follow-brightgreen.svg?longCache=true&style=popout-square)](https://github.com/Alexixyc)
 
 [![Blog](https://img.shields.io/badge/Blog-AlexiXiang-brightgreen.svg?longCache=true&style=popout-square)](http://alexixyc.cn)
+
++ #### Get Started
+```js
+    npm install ax-view --save
+```
+
+main.js
+```js
+    import Vue from 'vue'
+    import App from './App.vue'
+    import AxUI from 'ax-view'
+
+    Vue.use(AxUI)
+
+    new Vue({
+        el: '#app',
+        render: h => h(App)
+    })
+```
 
 > pagination：
 ```html

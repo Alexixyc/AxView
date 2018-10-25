@@ -1,0 +1,39 @@
+@import '../../assets/css/color.less';
+@import '../../assets/css/placeholder.less';
+.ax-input {
+    width: 220px;
+    height: 40px;
+    .in-main {
+        width: 100%;
+        height: 100%;
+        .in-el {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            padding: 0 10px;
+            border: 1px solid @base-4;
+            border-radius: 4px;
+            font-size: 14px;
+            color: @base-0;
+            line-height: 40px;
+            .placeHolderColor(@base-3);
+            outline: none;
+            -webkit-transition: border-color 0.2s ease-in;
+            transition: border-color 0.2s ease-in;
+        }
+        .in-hover {
+            border-color: @base-2;
+        }
+        .in-focus {
+            border-color: @st-0;
+        }
+        .in-disabled {
+            background: @forbidden;
+            cursor: not-allowed;
+        }
+        .in-readonly {
+            cursor: default;
+        }
+    }
+}

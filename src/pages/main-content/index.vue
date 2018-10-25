@@ -7,7 +7,7 @@
 <style scoped>
 	.right{
     position: absolute;
-    left: 25%;
+    left: 240px;
     right: 0px;
     top: 80px;
     bottom: 0px;
