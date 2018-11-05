@@ -3,7 +3,7 @@
 
 [![Blog](https://img.shields.io/badge/Blog-AlexiXiang-brightgreen.svg?longCache=true&style=popout-square)](http://alexixyc.cn)
 
-+ #### Get Started
+### Get Started
 ```js
     npm install ax-view --save
 ```
@@ -12,9 +12,9 @@ main.js
 ```js
     import Vue from 'vue'
     import App from './App.vue'
-    import AxUI from 'ax-view'
+    import AxView from 'ax-view'
 
-    Vue.use(AxUI)
+    Vue.use(AxView)
 
     new Vue({
         el: '#app',
@@ -22,7 +22,7 @@ main.js
     })
 ```
 
-> pagination：
+> pagination:
 ```html
     <ax-pagination
         :total="total"
@@ -33,7 +33,6 @@ main.js
 
     <script>
     ......
-    ...
     data() {
         return {
             total: 120,
@@ -50,10 +49,9 @@ main.js
     </script>
 ```
 
-> select：
+> select:
 ```html
     <ax-select
-        class="ax-select"
         v-model="selectedVal"
         @change="change"
         :disabled="false"
@@ -69,7 +67,6 @@ main.js
 
     <script>
     ......
-    ...
     data() {
         return {
             options: [{
@@ -93,6 +90,68 @@ main.js
     }
     </script>
 ```
+
+> input:
+```html
+    <ax-input
+        v-model="inputVal"
+        placeholder="please enter your name."
+        @focus="focus"
+        @blur="blur"
+        @change="change"
+        :width="240"
+        :disabled="false"
+        :readonly="false">
+    </ax-input>
+    <script>
+    ......
+    data() {
+        return {
+            inputVal: 'AlexiXiang'
+        }
+    },
+    methods: {
+        focus(e) {
+            console.log('focus')
+        },
+        blur(e) {
+            console.log('blur')
+        },
+        change(val) {
+            console.log('change', val)
+        }
+    }
+    </script>
+```
+
+> date-picker:
+```html
+    <div>
+        <div class="text">所选日期：{{date}}</div>
+        <ax-date-picker
+            class="ax-date-picker"
+            v-model="date"
+            :disabled="false"
+            :placeholder="'请选择会议日期'"
+            @change="change">
+        </ax-date-picker>
+    </div>
+    <script>
+    ......
+    data() {
+        return {
+            date: new Date()
+        }
+    },
+    methods: {
+        change(val) {
+            console.log('change监听', val)
+        }
+    }
+    </script>
+```
+
+
 
 ......
 ......

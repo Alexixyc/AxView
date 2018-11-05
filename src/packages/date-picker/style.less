@@ -1,0 +1,49 @@
+@import '../../assets/css/color.less';
+.ax-dp-main {
+    width: 320px;
+    text-align: left;
+}
+.date-input {
+    display: inline-block;
+}
+.date-choose {
+    position: relative;
+    width: 320px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid @base-4;
+    -webkit-box-shadow: 0 0 10px rgba(36, 42, 48, 0.1);
+    box-shadow: 0 0 10px rgba(36, 42, 48, 0.1);
+    text-align: center;
+    .dp-header {
+        float: left;
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        display: inline-block;
+        top: -2px;
+        left: 30px;
+        width: 0;
+        height: 0px;
+        border-style: solid;
+        border-width: 4px;
+        border-color: #fff #fff transparent transparent;
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-box-shadow: 2px -2px 2px rgba(36, 42, 48, 0.1);
+        box-shadow: 2px -2px 2px rgba(36, 42, 48, 0.1);
+    }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}

@@ -16,10 +16,9 @@
         </span>
         <!-- 往前更多《《 -->
         <span
-            class="page-block arrow"
+            class="page-block arrow prev-more"
             v-if="prevMore"
             @click="jumpPrev">
-            &lt;&lt;
         </span>
         <!-- 中间的页码按钮 -->
         <span
@@ -32,10 +31,10 @@
         </span>
         <!-- 往后更多》》 -->
         <span
-            class="page-block arrow"
+            class="page-block arrow next-more"
             v-if="nextMore"
             @click="jumpNext">
-            &gt;&gt;
+            <!-- &gt;&gt; -->
         </span> <!-- ••• -->
         <!-- 最后一页按钮 -->
         <span

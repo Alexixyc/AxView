@@ -7,6 +7,7 @@ import index from '@/pages/index'
 import pagination from '@/pages/pagination/index.vue'
 import select from '@/pages/select/index.vue'
 import input from '@/pages/input/index.vue'
+import datePicker from '@/pages/date-picker/index.vue'
 
 export default new Router ({
     routes: [{
@@ -25,6 +26,10 @@ export default new Router ({
 				path: 'input',
 				name: 'input',
 				component: input
+			}, {
+				path: 'date-picker',
+				name: 'date-picker',
+				component: datePicker
 			}]
     }]
 })

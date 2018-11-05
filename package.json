@@ -1,7 +1,7 @@
 {
   "name": "ax-view",
   "description": "This is my ui library based on vue.js.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Alexi_Xiang <alexixiang@sohu-inc.com>",
   "license": "MIT",
   "private": false,

@@ -28,12 +28,29 @@
     background: @st-0;
     cursor: default;
 }
+
 .active:hover {
     color: #FFFFFF;
 }
 
 .arrow {
     font-size: 14px;
+}
+
+.prev-more::after {
+    content: '···';
+}
+
+.prev-more:hover::after {
+    content: '<<';
+}
+
+.next-more::after {
+    content: '···';
+}
+
+.next-more:hover::after {
+    content: '>>';
 }
 
 .select-box {
@@ -54,4 +71,3 @@
     cursor: not-allowed;
     color: #CACDD4;
 }
-

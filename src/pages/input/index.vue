@@ -11,7 +11,9 @@
             :disabled="false"
             :readonly="false">
         </ax-input>
-        姓名：{{inputVal}}
+        <div class="text">
+            姓名：{{inputVal}}
+        </div>
     </div>
 </template>
 <script>
@@ -41,5 +43,9 @@ export default {
 <style lang="less" scoped>
 .ax-input {
     margin-left: 30%;
+}
+.text {
+    font-size: 14px;
+    margin-top: 20px;
 }
 </style>

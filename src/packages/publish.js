@@ -2,13 +2,15 @@ import AxPagination from './pagination/index.js';
 import AxSelect from './select/index.js';
 import AxOption from './option/index.js';
 import AxInput from './input/index.js';
+import AxDatePicker from './date-picker/index.js'
 // ...如果还有的话继续添加
 
 const components = [
     AxPagination,
     AxSelect,
     AxOption,
-    AxInput
+    AxInput,
+    AxDatePicker
   // ...如果还有的话继续添加
 ]
 
@@ -28,6 +30,7 @@ export default {
   AxPagination,
   AxSelect,
   AxOption,
-  AxInput
+  AxInput,
+  AxDatePicker
   // ...如果还有的话继续添加
 }

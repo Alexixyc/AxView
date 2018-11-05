@@ -3,6 +3,7 @@
         <router-link :to= "{path:'pagination'}" class="menu-btn">分页组件</router-link>
         <router-link :to= "{path:'select'}" class="menu-btn">选择器</router-link>
         <router-link :to= "{path:'input'}" class="menu-btn">输入框</router-link>
+        <router-link :to= "{path:'date-picker'}" class="menu-btn">日期选择</router-link>
     </div>
 </template>
 
