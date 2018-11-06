@@ -45,6 +45,8 @@ export default {
     margin-left: 30%;
 }
 .text {
+    margin-left: 30%;
+    text-align: left;
     font-size: 14px;
     margin-top: 20px;
 }

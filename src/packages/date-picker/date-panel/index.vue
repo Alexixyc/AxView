@@ -17,12 +17,15 @@
                     :class="['ax-dp-panel-td', {
                         'td-today': cell.isToday && cell.month == panelObj.currentMonth.month,
                         'c-month': cell.month == panelObj.currentMonth.month,
-                        'not-c-month': cell.month != panelObj.currentMonth.month
+                        'not-c-month': cell.month != panelObj.currentMonth.month,
+                        'selected': selectedDate && cell.date.getTime() == selectedDate.getTime()
                     }]"
                     v-for="(cell, Cindex) in row"
                     :key="Cindex"
                     @click="$emit('selectDate', cell, cell.month != panelObj.currentMonth.month)">
-                    {{cell.day}}
+                    <span>
+                        {{cell.day}}
+                    </span>
                 </td>
             </tr>
         </table>
@@ -35,6 +38,10 @@ export default {
         panelObj: {
             require: true,
             type: [Object]
+        },
+        selectedDate: {
+            require: true,
+            type: [String, Date]
         }
     },
     data() {

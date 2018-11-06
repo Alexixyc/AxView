@@ -29,6 +29,7 @@
                 </DatePickHeader>
                 <DatePickPanel
                     class="dp-panel"
+                    :selectedDate="selectedDate"
                     :panelObj="panelObj"
                     @selectDate="selectDate">
                 </DatePickPanel>
@@ -65,6 +66,7 @@ export default {
         // 双向数据绑定
         value(newVal) {
             newVal = new Date(newVal)
+            this.selectedDate = newVal
             this.$emit('change', newVal)
             this.inputValue = formatDate(newVal, 'YYYY-MM-DD') || this.inputValue
             this.jumpToPanel(newVal.getFullYear(), newVal.getMonth() + 1)
@@ -72,6 +74,7 @@ export default {
     },
     data() {
         return {
+            selectedDate: this.value ? new Date(this.value) : '',
             panelObj: new Panel(), // 日期面板对象
             panelVisible: false, // 是否显示面板
             inputValue: this.value ? formatDate(this.value, 'YYYY-MM-DD') : ''

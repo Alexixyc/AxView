@@ -1,5 +1,5 @@
 ## Welcome to Ax-View
-[![Github](https://img.shields.io/badge/GitHub-Follow-brightgreen.svg?longCache=true&style=popout-square)](https://github.com/Alexixyc)
+[![Github](https://img.shields.io/badge/GitHub-Follow-brightgreen.svg?longCache=true&style=popout-square)](https://github.com/Alexixyc/AlexiComponents)
 
 [![Blog](https://img.shields.io/badge/Blog-AlexiXiang-brightgreen.svg?longCache=true&style=popout-square)](http://alexixyc.cn)
 

@@ -2,7 +2,7 @@
  * @Author: AlexiXiang
  * @Date: 2018-10-26 14:23:44
  * @LastEditors: AlexiXiang
- * @LastEditTime: 2018-11-05 16:39:06
+ * @LastEditTime: 2018-11-06 11:59:44
  * @Description: 
  */
 
@@ -23,7 +23,7 @@ function Cell(dateStr) {
     this.day = this.date.getDate() // 日
     this.isToday = this.year === today.getFullYear()
         && this.month === today.getMonth() + 1 
-        && this.day === today.getDate() ? true : false
+        && this.day === today.getDate()
 }
 
 /**
