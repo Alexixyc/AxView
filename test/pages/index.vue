@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import mainHeader from '@/pages/main-header/index.vue'
-import mainLeft from '@/pages/main-left/index.vue'
-import mainContent from '@/pages/main-content/index.vue'
+import mainHeader from './main-header/index.vue'
+import mainLeft from './main-left/index.vue'
+import mainContent from './main-content/index.vue'
 export default {
     components: {
         'main-header': mainHeader,

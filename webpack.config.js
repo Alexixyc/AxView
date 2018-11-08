@@ -3,14 +3,14 @@ var webpack = require('webpack')
 
 // 执行环境
 const NODE_ENV = process.env.NODE_ENV;
-console.log("-----NODE_ENV===",NODE_ENV);
+console.log("-----NODE_ENV===", NODE_ENV);
 
 module.exports = {
-  entry: NODE_ENV == 'development' ? './src/main.js' : './src/packages/publish.js',
+  entry: NODE_ENV == 'development' ? './test/main.js' : './src/packages/publish.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js',
+    path: path.resolve(__dirname, './build'),
+    publicPath: '/build/',
+    filename: 'ax-view.js',
     library: 'ax-view', // 指定的就是你使用require时的模块名
     libraryTarget: 'umd', // 指定输出格式
     umdNamedDefine: true // 会对 UMD 的构建过程中的 AMD 模块进行命名。否则就使用匿名的 define
@@ -23,7 +23,13 @@ module.exports = {
           'vue-style-loader',
           'css-loader'
         ],
-      },      {
+      },
+      {
+        test: /\.less$/,
+        use: [
+          'less-loader'
+        ],
+      }, {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
@@ -49,7 +55,8 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': path.resolve(__dirname, './src')
+      '@': path.resolve(__dirname, './src'),
+      'test': path.resolve(__dirname, './test')
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
@@ -61,8 +68,8 @@ module.exports = {
   },
   performance: {
     hints: false
-  },
-  devtool: '#eval-source-map'
+  }
+  // devtool: '#eval-source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {

@@ -10,7 +10,7 @@
 </template>
 
 <style lang="less">
-@import '../../assets/css/color.less';
+@import '../../../src/assets/css/color.less';
 .header{
   height: 79px;
   border-bottom: 1px solid #E0E0E0;

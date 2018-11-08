@@ -3,11 +3,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 
-import index from '@/pages/index'
-import pagination from '@/pages/pagination/index.vue'
-import select from '@/pages/select/index.vue'
-import input from '@/pages/input/index.vue'
-import datePicker from '@/pages/date-picker/index.vue'
+import index from 'test/pages/index'
+import pagination from 'test/pages/pagination/index.vue'
+import select from 'test/pages/select/index.vue'
+import input from 'test/pages/input/index.vue'
+import datePicker from 'test/pages/date-picker/index.vue'
 
 export default new Router ({
     routes: [{

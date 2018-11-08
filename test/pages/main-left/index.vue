@@ -7,7 +7,7 @@
     </div>
 </template>
 <style scoped lang="less">
-@import '../../assets/css/color.less';
+@import '../../../src/assets/css/color.less';
 .left{
     position: absolute;
     top: 80px;
