@@ -13,25 +13,36 @@
         text-align: center;
         font-size: 14px;
     }
+    &-tr {
+    }
     &-th {
         border-bottom: 1px solid @base-4;
+        margin-bottom: 10px;
         font-weight: normal;
         padding: 0;
     }
     &-td {
         display: inline-block;
+        position: relative;
         padding: 0;
         width: 40px;
-        height: 40px;
+        height: 30px;
         line-height: 40px;
         cursor: pointer;
         text-align: center;
+        div {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
         span {
             display: block;
-            margin: 6px;
-            width: 28px;
-            height: 28px;
-            line-height: 28px;
+            margin: 3px;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
         }
     }
     .c-month {
@@ -46,7 +57,11 @@
     .td-today {
         color: @st-0;
     }
-    .selected {
+    // 强调的基本样式
+    .cell-st {
+        div {
+            background: @st-4;
+        }
         span {
             color: #FFFFFF;
             background: @st-0;
@@ -55,6 +70,53 @@
             &:hover {
                 color: #FFFFFF;
             }
+        }
+    }
+    .selected {
+        // 单选被选中的样式
+        .cell-st;
+        div {
+            background: #FFFFFF;
+        }
+    }
+    .selected-border {
+        // 带有border的被选中的样式
+        .cell-st;
+    }
+    .range-gap {
+        // range选择被选中的区间样式
+        background: @st-4;
+    }
+    .range-start {
+        // range选择被选中的起点样式
+        div {
+            border-radius: 50% 0 0 50%;
+        }
+        .cell-st;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0px;
+            width: 5px;
+            height: 30px;
+            background: @st-4;
+        }
+    }
+    .range-end {
+        // range选择被选中的终点样式
+        div {
+            border-radius: 0 50% 50% 0;
+        }
+        .cell-st;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0px;
+            width: 5px;
+            height: 30px;
+            background: @st-4;
         }
     }
 }

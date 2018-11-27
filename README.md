@@ -127,12 +127,20 @@ main.js
 > date-picker:
 ```html
     <div>
-        <div class="text">所选日期：{{date}}</div>
         <ax-date-picker
             class="ax-date-picker"
             v-model="date"
             :disabled="false"
             :placeholder="'请选择会议日期'"
+            @change="change">
+        </ax-date-picker>
+        <ax-date-picker
+            class="ax-date-picker"
+            v-model="dateRange"
+            type="daterange"
+            :disabled="false"
+            :startPlaceholder="'开始日期'"
+            :endPlaceholder="'结束日期'"
             @change="change">
         </ax-date-picker>
     </div>

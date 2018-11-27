@@ -2,7 +2,7 @@
  * @Author: AlexiXiang
  * @Date: 2018-10-26 14:23:44
  * @LastEditors: AlexiXiang
- * @LastEditTime: 2018-11-06 11:59:44
+ * @LastEditTime: 2018-11-19 18:04:15
  * @Description: 
  */
 
@@ -24,6 +24,7 @@ function Cell(dateStr) {
     this.isToday = this.year === today.getFullYear()
         && this.month === today.getMonth() + 1 
         && this.day === today.getDate()
+    this.activeClass = '' // 交互中的样式类名(selected,range-gap,range-start,range-end)
 }
 
 /**

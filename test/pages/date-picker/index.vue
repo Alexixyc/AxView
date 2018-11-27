@@ -8,6 +8,16 @@
             :placeholder="'请选择会议日期'"
             @change="change">
         </ax-date-picker>
+        <div class="text">所选日期：{{dateRange}}</div>
+        <ax-date-picker
+            class="ax-date-picker"
+            v-model="dateRange"
+            type="daterange"
+            :disabled="false"
+            :startPlaceholder="'会议开始'"
+            :endPlaceholder="'会议结束'"
+            @change="change">
+        </ax-date-picker>
     </div>
 </template>
 <script>
@@ -18,7 +28,8 @@ export default {
     },
     data() {
         return {
-            date: ''
+            date: '2018-12-09',
+            dateRange: ['2018-12-09', '2018-12-01']
         }
     },
     methods: {

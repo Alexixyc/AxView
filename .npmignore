@@ -1,6 +1,9 @@
 .DS_Store
 node_modules/
 test/
+.babelrc
+.editorconfig
 .gitignore
 index.html
+package-lock.json
 webpack.*.js
